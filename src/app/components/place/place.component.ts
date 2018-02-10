@@ -16,8 +16,13 @@ export class PlaceComponent implements OnInit{
 
 	ngOnInit(){}
 
-	private async RetrieveRestauraunts() {
-		let locationsJSON = await this.placeService.RetrieveLocations();
+	private RetrieveRestauraunts(radius: number, typeOfLocation: string) {
+		let locationsJSON = this.placeService.RetrieveLocations(radius, typeOfLocation).then(data => {
+			console.log(data.valueOf);
+		}, error => {
+			console.log(error);
+		});
+					
 		this.restaurantsLoaded = true;
 		console.log(locationsJSON);
 	}
