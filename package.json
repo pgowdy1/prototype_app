@@ -26,8 +26,10 @@
     "@angular/router": "^5.2.0",
     "angular-in-memory-web-api": "^0.5.3",
     "core-js": "^2.4.1",
+    "primeng": "^5.2.3",
     "rxjs": "^5.5.6",
-    "zone.js": "^0.8.19"
+    "zone.js": "^0.8.19",
+    "font-awesome": "^5.0.8"
   },
   "devDependencies": {
     "@angular/cli": "1.6.7",

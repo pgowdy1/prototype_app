@@ -27,12 +27,11 @@ export class PlaceService implements OnInit {
         try {
             let response = await this.http.get(this.googlePlacesBaseCall + "location=" + this.kansasCityLatitude + "," + this.kansasCityLongitude
                 + "&radius=" + radius + "&type=" + typeOfLocation + "&key=" + this.googleAPIKey).toPromise();
-                return response.json().data as Location[];
+                return null; 
+                // return response.toString() as Location[];
         } catch (error) {
             await this.handleError(error);
         }
-       
-    
     }
 
     private handleError(error)

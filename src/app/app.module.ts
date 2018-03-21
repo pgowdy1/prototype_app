@@ -5,6 +5,10 @@ import { AgmCoreModule } from '@agm/core'
 import { HttpClientModule } from '@angular/common/http'
 import { PlaceService } from './services/place.service';
 import { PlaceComponent } from './components/place/place.component'
+import { AccordionModule } from 'primeng/primeng';
+import { PanelModule } from 'primeng/primeng';
+import { ButtonModule } from 'primeng/primeng';
+import { RadioButtonModule } from 'primeng/primeng';
 
 import { AppComponent } from './app.component';
 import {
@@ -41,11 +45,14 @@ import {
   MatToolbarModule,
   MatTooltipModule,
 } from '@angular/material';
+import { HeaderMenuComponent } from './components/header-menu/header-menu.component';
+import { TabMenuModule } from 'primeng/tabmenu';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PlaceComponent
+    PlaceComponent,
+    HeaderMenuComponent
   ],
   imports: [
     AgmCoreModule.forRoot({
@@ -87,6 +94,11 @@ import {
     MatTabsModule,
     MatToolbarModule,
     MatTooltipModule,
+    TabMenuModule,
+    AccordionModule,
+    PanelModule,
+    ButtonModule,
+    RadioButtonModule
   ],
   providers: [PlaceService],
   bootstrap: [AppComponent],

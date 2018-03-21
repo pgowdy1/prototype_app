@@ -1,4 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
+import { KeyFilterModule } from 'primeng/keyfilter';
 import { PlaceService } from '../../services/place.service';
 import { OnInit } from '@angular/core/src/metadata/lifecycle_hooks';
 
@@ -8,13 +9,13 @@ import { OnInit } from '@angular/core/src/metadata/lifecycle_hooks';
 	styleUrls: ['./place.component.css'],
 })
 
-export class PlaceComponent implements OnInit{
+export class PlaceComponent implements OnInit {
 
-	private restaurantsLoaded : boolean = false;
+	private restaurantsLoaded: boolean = false;
 
 	constructor(private placeService: PlaceService) { }
 
-	ngOnInit(){}
+	ngOnInit() { }
 
 	private RetrieveRestauraunts(radius: number, typeOfLocation: string) {
 		let locationsJSON = this.placeService.RetrieveLocations(radius, typeOfLocation).then(data => {
@@ -22,7 +23,7 @@ export class PlaceComponent implements OnInit{
 		}, error => {
 			console.log(error);
 		});
-					
+
 		this.restaurantsLoaded = true;
 		console.log(locationsJSON);
 	}
